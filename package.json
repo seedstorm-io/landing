@@ -12,6 +12,7 @@
     "bootstrap": "^4.3.1",
     "core-js": "^2.6.5",
     "flag-icon-css": "^3.3.0",
+    "hooper": "^0.1.2",
     "jquery": "^3.4.0",
     "popper.js": "^1.15.0",
     "vue": "^2.6.10",
