@@ -1,4 +1,4 @@
-# vuejsfrontend
+# seedstorm
 
 ## Project setup
 ```
