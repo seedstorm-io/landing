@@ -1,29 +1,5 @@
-# seedstorm
+# SeedStorm.io FrontEnd
 
-## Project setup
-```
-yarn install
-```
+The frontend of seedstorm.io built with vuejs framework.
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+![image](https://user-images.githubusercontent.com/5221349/56225353-790d5a80-6071-11e9-9dab-535e655e4b3c.png)
