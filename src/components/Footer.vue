@@ -14,7 +14,7 @@
                         <h5 class="mb-4 font-weight-normal">Useful Links</h5>
                         <p><a href="/privacy-policy">Privacy Policy</a></p>
                         <p><a href="/affiliation">Become Affiliated</a></p>
-                        <p><a href="https://github.com/seedstormio" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a></p>
+                        <p><a href="https://github.com/seedstormio" target="_blank">GitHub Repository</a></p>
                         <p><a href="medium">See the Blog</a></p>
                     </div>
                     <div class="col-lg-3">
@@ -75,6 +75,13 @@ footer .inner
 footer a
 {
     color: #98a0aa;
+    transition: all 0.5s ease;
+}
+
+footer a:hover
+{
+    color: #EEEEEE;
+    text-decoration: none;
 }
 
 footer .form-control
