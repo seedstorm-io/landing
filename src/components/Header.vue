@@ -1,5 +1,5 @@
 <template>
-    <nav class="header navbar navbar-expand-lg navbar-light mt-4">
+    <nav id="header" class="navbar navbar-expand-lg sticky-top navbar-light">
         <div class="container">
             <router-link to="/" class="navbar-brand mr-5 ">
                 <img src="../assets/logo.png" style="height: 40px;" />
@@ -43,13 +43,42 @@ export default {
   },
   props: {
     msg: String
-  }
+  },
+  mounted() {
+      this.$nextTick(function(){
+        window.addEventListener("scroll", function(){
+          var navbar = document.getElementById("header")
+          if(document.documentElement.scrollTop >= 40) {
+            if (navbar.classList.contains("shrink") === false) {
+              navbar.classList.toggle("shrink");
+            }
+          }
+          else {
+            if (navbar.classList.contains("shrink") === true) {
+              navbar.classList.toggle("shrink");
+            }
+          }
+        })
+      })
+    },
 }
 </script>
 
 <style scoped>
-.header
+#header:not(.shrink)
 {
+    margin-top: 25px;
+}
 
+.shrink
+{
+    background-color: #FFFFFF;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.05);
+    padding: 25px 0;
+}
+
+#header
+{
+    transition: box-shadow 0.3s ease-out;
 }
 </style>

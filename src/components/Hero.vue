@@ -17,7 +17,7 @@ export default {
 
 <style scoped>
 .hero {
-    padding: 130px 0;
+    padding: 15vh 0;
 }
 
 .hero h1 {

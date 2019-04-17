@@ -1,7 +1,7 @@
 <template>
     <nav id="banner" class="navbar navbar-expand-lg navbar-light small py-0">
         <div class="container">
-            <span class="navbar-text">
+            <span class="navbar-text inner">
                 SeedStorm.io | The Blockchain Hosting Platform for everybody.
             </span>
             <div class="collapse navbar-collapse" id="navbarText">
@@ -30,7 +30,7 @@
                         <a class="nav-link" href="#" id="more-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-ellipsis-h"></i>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="more-dropdown">
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="more-dropdown">
                             <a class="dropdown-item" href="#">Action</a>
                             <a class="dropdown-item" href="#">Another action</a>
                             <a class="dropdown-item" href="#">Something else here</a>
@@ -49,7 +49,9 @@ export default {
   name: 'Banner',
   props: {
     msg: String
-  }
+  },
+  mounted() {
+      }
 }
 </script>
 
@@ -63,5 +65,14 @@ export default {
 #header.navbar-light .navbar-nav .nav-link {
     color: #697A89 !important;
     font-weight: 500;
+}
+
+.search
+{
+    font-size: 10pt;
+    border-color: transparent;
+    width: 120px;
+    height: 25px;
+    margin: 10px 0;
 }
 </style>

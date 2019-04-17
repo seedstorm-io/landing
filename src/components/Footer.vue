@@ -43,10 +43,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
-                        Copyright &copy; 2019 SeedStorm.io - All Rights Reserved - Source on GitHub
+                        Copyright &copy; {{ new Date().getFullYear() }} SeedStorm.io - All Rights Reserved - Source on GitHub
                     </div>
                     <div class="col-lg-4 text-right">
-                        License MIT
+                        License MIT &bull; Powered by Digital Ocean
                     </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@ footer
 
 footer .inner
 {
-    padding: 70px 0;
+    padding: 90px 0;
 }
 
 footer a

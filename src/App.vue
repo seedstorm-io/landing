@@ -1,14 +1,37 @@
 <template>
   <div id="app">
+    <nprogress-container></nprogress-container>
+    <!-- <div class="loader" style="
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 777;
+    display: flex;
+    align-items: center;
+    background-color: white;">
+      <breeding-rhombus-spinner :animation-duration="2000" :size="65" color="#000000" />
+    </div> -->
     <Banner />
     <Header />
     <router-view></router-view>
+    <Footer />
+    <!-- <cookie-law law theme="dark-lime">
+      <div slot="message">
+        Here is my message for more info <router-link to="privacy-policy">Click here</router-link>
+      </div>
+    </cookie-law> -->
   </div>
 </template>
 
 <script>
+import NprogressContainer from 'vue-nprogress/src/NprogressContainer'
+// import { BreedingRhombusSpinner } from 'epic-spinners'
 import Banner from './components/Banner.vue'
 import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
+import CookieLaw from 'vue-cookie-law'
 import 'bootstrap'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css'
@@ -16,8 +39,15 @@ import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css'
 export default {
   name: 'app',
   components: {
+    NprogressContainer,
     Banner,
-    Header
+    Header,
+    Footer,
+    CookieLaw
+    // BreedingRhombusSpinner
+  },
+  mounted()
+  {
   }
 }
 </script>
@@ -28,7 +58,7 @@ export default {
 #app
 {
     font-family: 'Source Sans Pro', sans-serif;
-    background-image: url(https://www.mozilla.org/media/img/firefox/developer/whatsnew-firstrun-hero-background.df0a60dd3a36.png);
+    background-image: url(assets/background.png);
     background-size: 3400px 900px;
     background-position-x: center;
     background-position-y: 120px;
