@@ -15,20 +15,19 @@
             </div>
         </Hero>
         <Announcement />
-        <section style="background-color: #fafafa;">
-            <div class="container">
-                <div style="padding: 200px 0;">
-                    ds
-                </div>
+        <Section style="background-color: #fafafa;">
+            <div style="padding: 200px 0;">
+                ds
             </div>
-        </section>
-        <CallToAction content="Less hassle, more masternodes. Start earning now." button="Get Started" />
+        </Section>
+        <CallToAction content="Don't loose money, stake your coins on SeedStorm.io" button="Get Started" />
     </div>
 </template>
 
 <script>
 import CallToAction from '../components/CallToAction.vue'
 import Hero from '../components/Hero.vue'
+import Section from '../components/Section.vue'
 import Announcement from '../components/Announcement.vue'
 import Button from '../components/sub/Button.vue'
 
@@ -38,7 +37,8 @@ export default {
       Hero,
       Announcement,
       Button,
-      CallToAction
+      CallToAction,
+      Section
   },
   data () {
     return {
