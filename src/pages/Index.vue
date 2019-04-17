@@ -15,17 +15,19 @@
             </div>
         </Hero>
         <Announcement />
-        <section style="background-color: #fafbfc;">
+        <section style="background-color: #fafafa;">
             <div class="container">
                 <div style="padding: 200px 0;">
                     ds
                 </div>
             </div>
         </section>
+        <CallToAction content="Less hassle, more masternodes. Start earning now." button="Get Started" />
     </div>
 </template>
 
 <script>
+import CallToAction from '../components/CallToAction.vue'
 import Hero from '../components/Hero.vue'
 import Announcement from '../components/Announcement.vue'
 import Button from '../components/sub/Button.vue'
@@ -35,7 +37,8 @@ export default {
   components: {
       Hero,
       Announcement,
-      Button
+      Button,
+      CallToAction
   },
   data () {
     return {
