@@ -12,8 +12,17 @@
                     <li class="nav-item">
                         <router-link to="/create-account" class="nav-link">Create Account</router-link>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="far fa-smile"></i></a>
+                        <div class="dropdown-menu shadow border-0 feedback">
+                            <form class="px-3 py-1 pb-3">
+                                <div class="form-group">
+                                    <label>Enter Feedback</label>
+                                    <textarea class="form-control" required rows="5" placeholder="Suggest a new feature or simply send us a feedback"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-block btn-xs btn-outline-primary">Post Feedback</button>
+                            </form>
+                        </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="lang-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -74,5 +83,10 @@ export default {
     width: 120px;
     height: 25px;
     margin: 10px 0;
+}
+
+.dropdown-menu.feedback
+{
+    width: 250px;
 }
 </style>
