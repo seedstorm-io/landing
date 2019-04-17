@@ -5,17 +5,22 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "publish": "yarn build --no-clean && cd dist && git add . && git commit -m 'Update' && git push"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
+    "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "core-js": "^2.6.5",
+    "epic-spinners": "^1.0.4",
     "flag-icon-css": "^3.3.0",
     "hooper": "^0.1.2",
     "jquery": "^3.4.0",
     "popper.js": "^1.15.0",
     "vue": "^2.6.10",
+    "vue-cookie-law": "^1.10.0",
+    "vue-nprogress": "^0.1.5",
     "vue-router": "^3.0.5"
   },
   "devDependencies": {
