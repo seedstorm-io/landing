@@ -6,6 +6,10 @@ import VueTyperPlugin from 'vue-typer'
 // import AsyncComputed from 'vue-async-computed'
 // import VueResource from 'vue-resource'
 
+import snackbar from "node-snackbar"
+import 'node-snackbar/dist/snackbar.min.css'
+Object.defineProperty(Vue.prototype, '$snackbar', { value: snackbar });
+
 Vue.config.devtools = true
 Vue.config.productionTip = false
 
