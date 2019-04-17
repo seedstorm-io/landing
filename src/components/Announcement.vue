@@ -2,23 +2,29 @@
     <div class="container">
         <div class="jumbotron bg-white -mx-5 shadow rounded">
             <div class="container">
-                <hooper :autoPlay="true" :playSpeed="5000">
-                    <slide v-for="announcement in announcements" :key="announcement.id">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="text-center">
-                                    <img :src="announcement.image" style="width: 200px;" class="img-fluid" />
+                <div id="loader" class="loader" style="height: 250px;" v-if="!this.loaded">
+                    <half-circle-spinner :animation-duration="1000" :size="50" color="#555555" />
+                </div>
+                <transition name="fade" v-on:enter="enter">
+                    <hooper :autoPlay="true" :playSpeed="5000" v-if="this.loaded">
+                        <slide v-for="announcement in announcements" :key="announcement.id">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="text-center">
+                                        <img :src="announcement.image" style="width: 200px;" class="img-fluid" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <h6 class="accent font-weight-normal">Announcement</h6>
+                                    <h3>{{ announcement.title }}</h3>
+                                    <p class="mt-3">{{ announcement.description }}</p>
+                                    <Button to="/deploy/stratis"
+                                        class="btn btn-outline-primary">{{ announcement.actionButton }}</Button>
                                 </div>
                             </div>
-                            <div class="col-lg-8">
-                                <h6 class="accent font-weight-normal">Announcement</h6>
-                                <h3>{{ announcement.title }}</h3>
-                                <p class="mt-3">{{ announcement.description }}</p>
-                                <Button to="/deploy/stratis" class="btn btn-outline-primary">{{ announcement.actionButton }}</Button>
-                            </div>
-                        </div>
-                    </slide>
-                </hooper>
+                        </slide>
+                    </hooper>
+                </transition>
             </div>
         </div>
     </div>
@@ -26,24 +32,29 @@
 
 <script>
 import axios from "axios"
+import { HalfCircleSpinner } from 'epic-spinners'
 import { Hooper, Slide } from 'hooper'
 import 'hooper/dist/hooper.css'
 
 export default {
     name: 'Announcement',
     data () {
-        return { announcements: [{},{}] }
+        return {
+            loaded: false,
+            announcements: [{},{}]
+        }
     },
     components: {
         Hooper,
-        Slide
+        Slide,
+        HalfCircleSpinner
     },
     mounted() {
         axios
-            .get("https://localhost:44396/api/demo/announcements")
+            .get("https://localhost:5001/api/demo/announcements")
             .then(response => {
+                this.loaded = true;
                 this.announcements = response.data
-                // hooper.restart()
             })
     }
 }
