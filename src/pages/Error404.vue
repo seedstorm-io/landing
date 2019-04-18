@@ -1,10 +1,12 @@
 <template>
-    <Hero>
-        <div class="container">
-            <h1 class="display-4 native font-weight-500">Error 404</h1>
-            <p>The requested page is not found or have been moved.</p>
-        </div>
-    </Hero>
+    <section class="bg-light">
+        <Hero>
+            <div class="container">
+                <h1 class="display-4 native font-weight-500">Error 404</h1>
+                <p>The requested page is not found or have been moved.</p>
+            </div>
+        </Hero>
+    </section>
 </template>
 
 <script>
@@ -19,4 +21,9 @@ export default {
 </script>
 
 <style scoped>
+section
+{
+    border-top: 1px solid #eeeeee;
+    padding: 100px 0;
+}
 </style>
