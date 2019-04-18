@@ -1,6 +1,6 @@
 <template>
   <section class="py-5">
-    <div class="container">
+    <div :class="getMode()">
       <slot />
     </div>
   </section>
@@ -8,10 +8,32 @@
 
 <script>
 export default {
-  name: 'Section'
+  name: 'Section',
+  props: {
+    mode: String
+  },
+  methods: {
+    getMode() {
+      switch(this.mode)
+      {
+        default:
+        return "container"
+
+        case "md":
+        return "container extra"
+
+        case "lg":
+        return "container-fluid"
+      }
+    }
+  }
 }
 </script>
 
 <style scoped>
-
+@media (min-width: 1200px) {
+  .container.extra {
+    max-width: 1300px !important;
+  }
+}
 </style>
