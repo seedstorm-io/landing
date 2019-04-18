@@ -5,10 +5,10 @@
                 <h1 class="display-4 native font-weight-500">
                     <vue-typer text='Blockchain Hosting Platform' :type-delay='120' :repeat='0' caret-animation='smooth'></vue-typer>
                 </h1>
-                <p><a href="">SeedStorm.io</a> provide a blockchain hosting solution for individuals or companies,<br />to host full-nodes or masternodes for security, monitoring or simply for for convenience.</p>
+                <p><a href="">SeedStorm.io</a> provide a blockchain hosting solution for individuals or companies,<br />to host full-nodes or masternodes for security, monitoring or simply for convenience.</p>
                 <div class="form-group">
-                    <Button to="/get-started" class="btn button btn-shadow btn-primary mr-2">Getting Started</Button>
-                    <Button to="/explore" class="btn btn-shadow btn-dark ml-2">
+                    <Button to="get-started" class="btn button btn-shadow btn-primary mr-2">Getting Started</Button>
+                    <Button to="explore" class="btn btn-shadow btn-dark ml-2">
                         <i class="fas fa-cubes"></i> Explore Blockchains
                     </Button>
                 </div>
@@ -20,7 +20,7 @@
                 ds
             </div>
         </Section>
-        <CallToAction content="Don't loose money, stake your coins on SeedStorm.io" button="Get Started" />
+        <CallToAction content="Don't loose your money, stake your coins on SeedStorm.io" button="Get Started" />
     </div>
 </template>
 
@@ -48,5 +48,13 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+#app
+{
+    background-image: url(../assets/background.png);
+    background-size: 3400px 900px;
+    background-position-x: center;
+    background-position-y: 155px;
+    background-repeat: no-repeat;
+}
 </style>
