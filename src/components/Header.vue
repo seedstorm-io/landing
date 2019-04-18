@@ -26,7 +26,8 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <ButtonCTA to="/get-started" value="Get Started" />
+                    <ButtonCTA to="/register" v-if="!logged" value="Get Started" />
+                    <ButtonCTA to="/dashboard" v-if="logged" value="My Dashboard" />
                 </form>
             </div>
         </div>
@@ -44,30 +45,40 @@ export default {
   props: {
     msg: String
   },
+  data() {
+    return {
+      logged: false,
+      fullname: ''
+    }
+  },
   mounted() {
-      this.$nextTick(function(){
-        window.addEventListener("scroll", function(){
-          var navbar = document.getElementById("header")
-          if(document.documentElement.scrollTop >= 40) {
-            if (navbar.classList.contains("shrink") === false) {
-              navbar.classList.toggle("shrink");
-            }
+    this.$nextTick(function () {
+      window.addEventListener("scroll", function () {
+        var navbar = document.getElementById("header")
+        if (document.documentElement.scrollTop >= 40) {
+          if (navbar.classList.contains("shrink") === false) {
+            navbar.classList.toggle("shrink");
           }
-          else {
-            if (navbar.classList.contains("shrink") === true) {
-              navbar.classList.toggle("shrink");
-            }
+        } else {
+          if (navbar.classList.contains("shrink") === true) {
+            navbar.classList.toggle("shrink");
           }
-        })
+        }
       })
-    },
+    })
+
+    if (localStorage.getItem("Token")) {
+      this.logged = true;
+      this.fullname = "Clint";
+    }
+  }
 }
 </script>
 
 <style scoped>
 #header:not(.shrink)
 {
-    margin-top: 25px;
+    margin: 25px 0;
 }
 
 .shrink
