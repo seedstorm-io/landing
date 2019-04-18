@@ -13,15 +13,10 @@
     background-color: white;">
       <breeding-rhombus-spinner :animation-duration="2000" :size="65" color="#000000" />
     </div> -->
-    <Banner />
-    <Header />
+    <Banner v-if="mode" />
+    <Header v-if="mode" />
     <router-view></router-view>
-    <Footer />
-    <!-- <cookie-law law theme="dark-lime">
-      <div slot="message">
-        Here is my message for more info <router-link to="privacy-policy">Click here</router-link>
-      </div>
-    </cookie-law> -->
+    <Footer  v-if="mode" />
   </div>
 </template>
 
@@ -31,7 +26,7 @@ import NprogressContainer from 'vue-nprogress/src/NprogressContainer'
 import Banner from './components/Banner.vue'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
-import CookieLaw from 'vue-cookie-law'
+// import CookieLaw from 'vue-cookie-law'
 import 'bootstrap'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css'
@@ -43,11 +38,23 @@ export default {
     Banner,
     Header,
     Footer,
-    CookieLaw
+    // CookieLaw
     // BreedingRhombusSpinner
   },
-  mounted()
-  {
+  computed:  {
+    mode() {
+      if(this.$route.meta.mode)
+      {
+        if(this.$route.meta.mode == "blank")
+        {
+          return false;
+        }
+      }
+      return true;
+    }
+  },
+  created: function() {
+    this.globalReadOnlyProperty = "This won't change it";
   }
 }
 </script>
@@ -58,11 +65,6 @@ export default {
 #app
 {
     font-family: 'Source Sans Pro', sans-serif;
-    background-image: url(assets/background.png);
-    background-size: 3400px 900px;
-    background-position-x: center;
-    background-position-y: 120px;
-    background-repeat: no-repeat;
 }
 
 .native {
