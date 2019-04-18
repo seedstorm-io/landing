@@ -1,9 +1,9 @@
 <template>
-    <Section class="bg-light pane">
+    <Section class="bg-light pane" mode="md">
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h2>Explore our Blockchain Nodes</h2>
-                <p class="mb-5">Find here all our brilliant nodes.</p>
+                <p class="mb-4 pb-3">Find here all our brilliant nodes.</p>
             </div>
         </div>
         <div class="row">
@@ -18,8 +18,11 @@
                     <li class="nav-item">
                         <a class="nav-link inherit" id="masternodes-tab" data-toggle="tab" href="#masternodes" role="tab">Masternodes</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link inherit" id="othernodes-tab" data-toggle="tab" href="#othernodes" role="tab">Other</a>
+                    </li> -->
+                    <li class="nav-item ml-auto d-none d-sm-block d-lg-block">
+                        <input type="search" v-model="query" class="form-control form-control-sm" placeholder="Search Keywords..." />
                     </li>
                 </ul>
                 <div class="tab-content py-3" id="myTabContent">
@@ -116,6 +119,10 @@ export default {
     },
     methods: {
         allNodes() {
+            if(this.query)
+            {
+                return this.nodes.filter((item) => { return item.listed == true && item.slug.toLowerCase().includes(this.query.toLowerCase()) })
+            }
             return this.nodes.filter(function(item) { return item.listed == true; })
         },
         fullnodes() {
@@ -128,6 +135,7 @@ export default {
     data() {
         return {
             nodes: [],
+            query: null
         }
     },
     mounted() {
