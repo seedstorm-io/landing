@@ -2,15 +2,22 @@
     <nav id="banner" class="navbar navbar-expand-lg navbar-light small py-0">
         <div class="container">
             <span class="navbar-text inner">
-                SeedStorm.io | The Blockchain Hosting Platform for everybody.
+                {{ latestNews.title }}
+                <a :href="latestNews.link" target="_blank" class="ml-1 inherit">Read More</a>
             </span>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <router-link to="/login" class="nav-link">Login</router-link>
+                        <router-link to="login" v-if="!logged" class="nav-link">Login</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link to="/create-account" class="nav-link">Create Account</router-link>
+                        <router-link to="create-account" v-if="!logged" class="nav-link">Create Account</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link to="dashboard" v-if="logged" class="nav-link">Welcome back Clint</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link to="logout" v-if="logged" class="nav-link">Logout</router-link>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="far fa-smile"></i></a>
@@ -31,8 +38,8 @@
                         <div class="dropdown-menu shadow border-0" aria-labelledby="lang-dropdown">
                             <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-gb"></span> &nbsp;English</a>
                             <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-fr"></span> &nbsp;French</a>
-                            <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-es"></span> &nbsp;Spanish</a>
-                            <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-cn"></span> &nbsp;Chinese</a>
+                            <!-- <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-es"></span> &nbsp;Spanish</a> -->
+                            <!-- <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-cn"></span> &nbsp;Chinese</a> -->
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -54,29 +61,40 @@
 </template>
 
 <script>
+import { endpoint } from '../environment.js'
 import axios from 'axios'
 import '../../node_modules/flag-icon-css/css/flag-icon.min.css'
 
 export default {
     name: 'Banner',
-    data () {
+    data() {
         return {
-            feedback: null
+            feedback: null,
+            latestNews: {},
+            logged: false
         }
     },
     methods: {
-        submitFeedback(event)
-        {
-            axios
-            .post("//api.seedstorm.io/api/feedbacks", { feedback: this.feedback })
-            .then(response => {
-                this.$snackbar.show({text: "Thank you for your feedback ! 🚀", pos: 'bottom-center'});
-            })
+        submitFeedback(event) {
+            // axios
+            // .post("//api.seedstorm.io/api/feedbacks", { feedback: this.feedback })
+            // .then(response => {
+            //     this.$snackbar.show({text: "Thank you for your feedback ! 🚀", pos: 'bottom-center'});
+            // })
             event.preventDefault();
         }
     },
     mounted() {
-      }
+        axios
+            .get(endpoint + "/announces/news")
+            .then(response => {
+                this.latestNews = response.data
+            })
+
+        if (localStorage.getItem("Token")) {
+            this.logged = true;
+        }
+    }
 }
 </script>
 
@@ -101,8 +119,13 @@ export default {
     margin: 10px 0;
 }
 
+.navbar-light .navbar-text a {
+    color: rgba(90, 132, 197, 0.9) !important;
+}
+
 .dropdown-menu.feedback
 {
     width: 250px;
 }
+
 </style>
