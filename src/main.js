@@ -31,6 +31,14 @@ new Vue({
         }
       },
       {
+        name: 'explore',
+        path: '/explore',
+        component: () => import('./pages/Explore.vue'),
+        meta: {
+          mode: "normal"
+        }
+      },
+      {
         name: 'login',
         path: '/login',
         component: () => import('./pages/Login.vue'),
