@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-9">
-          <h1 class="display-5">{{ content }}</h1>
+          <h1 class="display-5 font-weight-light">{{ content }}</h1>
         </div>
         <div class="col-lg-3 text-right">
           <router-link to="get-started" class="btn btn-lg btn-dark border-0 rounded-0">{{ button }}</router-link>
@@ -35,6 +35,7 @@ section
 
 .display-5
 {
-   font-size: 25pt;
+   font-size: 18pt;
+   padding-top: 7px;
 }
 </style>
