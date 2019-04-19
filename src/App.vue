@@ -13,10 +13,10 @@
     background-color: white;">
       <breeding-rhombus-spinner :animation-duration="2000" :size="65" color="#000000" />
     </div> -->
-    <Banner v-if="mode" />
-    <Header v-if="mode" />
+    <Banner v-if="layout" mode="" />
+    <Header v-if="layout" />
     <router-view></router-view>
-    <Footer  v-if="mode" />
+    <Footer  v-if="layout" />
   </div>
 </template>
 
@@ -42,10 +42,10 @@ export default {
     // BreedingRhombusSpinner
   },
   computed:  {
-    mode() {
-      if(this.$route.meta.mode)
+    layout() {
+      if(this.$route.meta.layout)
       {
-        if(this.$route.meta.mode == "blank")
+        if(this.$route.meta.layout == "blank")
         {
           return false;
         }
@@ -60,7 +60,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600');
 
 #app
 {
