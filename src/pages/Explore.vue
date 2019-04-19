@@ -1,5 +1,5 @@
 <template>
-    <Section class="bg-light pane" mode="md">
+    <Section class="bg-light- -pane" mode="md">
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h2>Explore our Blockchain Nodes</h2>
@@ -29,7 +29,7 @@
                     <div class="tab-pane fade show active" id="allnodes" role="tabpanel">
                         <div class="row">
                             <div v-for="node in allNodes()" :key="node.id" class="col-lg-4 col-sm-6">
-                                <div class="card border-0 shadow-sm mb-4">
+                                <div class="card border-0 shadow mb-4">
                                     <div class="card-body">
                                         <router-link :to="'/explore/' + node.slug">
                                             <i class="far float-right info mt-1 fa-question-circle"></i>
@@ -53,7 +53,7 @@
                     <div class="tab-pane fade" id="fullnodes" role="tabpanel">
                         <div class="row">
                             <div v-for="node in fullnodes()" :key="node.id" class="col-lg-4 col-sm-6">
-                                <div class="card border-0 shadow-sm mb-4">
+                                <div class="card border-0 shadow mb-4">
                                     <div class="card-body">
                                         <router-link :to="'/explore/' + node.slug">
                                             <i class="far float-right info mt-1 fa-question-circle"></i>
@@ -77,7 +77,7 @@
                     <div class="tab-pane fade" id="masternodes" role="tabpanel">
                         <div class="row">
                             <div v-for="node in masternodes()" :key="node.id" class="col-lg-4 col-sm-6">
-                                <div class="card border-0 shadow-sm mb-4">
+                                <div class="card border-0 shadow mb-4">
                                     <div class="card-body">
                                         <router-link :to="'/explore/' + node.slug">
                                             <i class="far float-right info mt-1 fa-question-circle"></i>
@@ -154,6 +154,7 @@ export default {
 {
     font-weight: bold;
 }
+
 .icon
 {
     width: 23px;
