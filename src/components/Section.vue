@@ -20,7 +20,7 @@ export default {
         return "container"
 
         case "md":
-        return "container extra"
+        return "container large"
 
         case "lg":
         return "container-fluid"
@@ -31,9 +31,4 @@ export default {
 </script>
 
 <style scoped>
-@media (min-width: 1200px) {
-  .container.extra {
-    max-width: 1300px !important;
-  }
-}
 </style>
