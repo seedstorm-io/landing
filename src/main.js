@@ -26,7 +26,7 @@ new Vue({
         path: '/',
         component: () => import('./pages/Index.vue'),
         meta: {
-          mode: "normal",
+          layout: "normal",
           showProgressBar: true
         }
       },
@@ -35,7 +35,7 @@ new Vue({
         path: '/explore',
         component: () => import('./pages/Explore.vue'),
         meta: {
-          mode: "normal"
+          layout: "normal"
         }
       },
       {
@@ -43,7 +43,7 @@ new Vue({
         path: '/login',
         component: () => import('./pages/Login.vue'),
         meta: {
-          mode: "normal"
+          layout: "normal"
         }
       },
       {
@@ -51,7 +51,7 @@ new Vue({
         path: '/create-account',
         component: () => import('./pages/Register.vue'),
         meta: {
-          mode: "normal"
+          layout: "normal"
         }
       },
       {
@@ -64,14 +64,14 @@ new Vue({
         path: '/dashboard',
         component: () => import('./pages/Dashboard.vue'),
         meta: {
-          mode: "normal"
+          layout: "normal"
         }
       },
       {
         path: '*',
         component: () => import('./pages/Error404.vue'),
         meta: {
-          mode: "normal"
+          layout: "normal"
         }
         // component: {
         //   render(h) { return h('div', '404. Not Found.') }
