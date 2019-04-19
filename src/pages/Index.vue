@@ -5,7 +5,8 @@
                 <h1 class="display-4 native font-weight-500">
                     <vue-typer text='Blockchain Hosting Platform' :type-delay='120' :repeat='0' caret-animation='smooth'></vue-typer>
                 </h1>
-                <p><a href="">SeedStorm.io</a> provide a blockchain hosting solution for individuals or companies,<br />to host full-nodes or masternodes for security, monitoring or simply for convenience.</p>
+                <!-- <p><a href="">SeedStorm.io</a> provide a blockchain hosting solution for individuals or companies,<br />to host full-nodes or masternodes for security, monitoring or simply for convenience.</p> -->
+                <p><a href="">SeedStorm.io</a> provides a secure and easy hosting solution for individuals<br />and companies to deploy and host full nodes or masternodes.</p>
                 <div class="form-group">
                     <Button to="get-started" class="btn button btn-shadow btn-primary mr-2">Getting Started</Button>
                     <Button to="explore" class="btn btn-shadow btn-dark ml-2">
@@ -20,12 +21,20 @@
                 ds
             </div>
         </Section>
+        <Section>
+            <div class="mt-5 text-center">
+                <h2>Frequently Asked Questions</h2>
+                <p class="mb-4 pb-3">Find the answer to your questions.</p>
+            </div>
+            <FAQ />
+        </Section>
         <CallToAction content="Don't loose your money, stake your coins on SeedStorm.io" button="Get Started" />
     </div>
 </template>
 
 <script>
 import CallToAction from '../components/CallToAction.vue'
+import FAQ from '../components/FAQ.vue'
 import Hero from '../components/Hero.vue'
 import Section from '../components/Section.vue'
 import Announcement from '../components/Announcement.vue'
@@ -38,7 +47,8 @@ export default {
       Announcement,
       Button,
       CallToAction,
-      Section
+      Section,
+      FAQ
   },
   data () {
     return {
