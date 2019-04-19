@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="jumbotron bg-white -mx-5 shadow rounded">
+        <div class="jumbotron bg-white mx-5 mb-5 shadow rounded">
             <div class="container">
                 <div id="loader" class="loader" style="height: 250px;" v-if="!this.loaded">
                     <half-circle-spinner :animation-duration="1000" :size="50" color="#555555" />
