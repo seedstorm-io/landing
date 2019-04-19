@@ -1,4 +1,4 @@
-# SeedStorm.io FrontEnd
+# SeedStorm.io Front-End
 
 The frontend of seedstorm.io built with vuejs framework.
 
