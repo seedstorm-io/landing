@@ -1,6 +1,11 @@
 {
   "version": 2,
+  "alias": "seedstorm.io",
   "name": "seedstorm",
+  "public": true,
+  "github": {
+    "enabled": true
+  },
   "builds": [{
     "src": "package.json",
     "use": "@now/static-build"
