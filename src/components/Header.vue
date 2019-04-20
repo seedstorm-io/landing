@@ -26,8 +26,8 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <ButtonCTA to="/register" v-if="!logged" value="Get Started" />
-                    <ButtonCTA to="/dashboard" v-if="logged" value="My Dashboard" />
+                    <ButtonCTA to="create-account" v-if="!logged" value="Get Started" />
+                    <ButtonCTA to="dashboard" v-if="logged" value="My Dashboard" />
                 </form>
             </div>
         </div>
