@@ -31,6 +31,22 @@ new Vue({
         }
       },
       {
+        name: 'pricing',
+        path: '/pricing',
+        component: () => import('./pages/Pricing.vue'),
+        meta: {
+          layout: "normal"
+        }
+      },
+      {
+        name: 'privacy',
+        path: '/privacy-policy',
+        component: () => import('./pages/PrivacyPolicy.vue'),
+        meta: {
+          layout: "normal"
+        }
+      },
+      {
         name: 'explore',
         path: '/explore',
         component: () => import('./pages/Explore.vue'),
