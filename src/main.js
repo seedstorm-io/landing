@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import NProgress from 'vue-nprogress'
 import App from './App.vue'
 import VueTyperPlugin from 'vue-typer'
+import Gravatar from 'vue-gravatar'
+import VueI18n from 'vue-i18n'
 
 import snackbar from "node-snackbar"
 import 'node-snackbar/dist/snackbar.min.css'
@@ -14,10 +16,20 @@ Vue.config.productionTip = false
 Vue.use(Router)
 Vue.use(NProgress)
 Vue.use(VueTyperPlugin)
+Vue.use(VueI18n)
+
+Vue.component('v-gravatar', Gravatar);
 
 const nprogress = new NProgress({ parent: '.nprogress-container' })
 
+import { messages } from './internationalization'
+const i18n = new VueI18n({
+  locale: 'ja',
+  messages,
+})
+
 new Vue({
+  i18n,
   nprogress,
   router: new Router({
     mode: 'history',
