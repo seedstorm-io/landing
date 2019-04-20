@@ -1,12 +1,12 @@
 export const messages = {
     en: {
-        message: {
-            hello: 'hello world'
+        index: {
+            title: 'Blockchain Hosting Platform'
         }
     },
-    ja: {
-        message: {
-            hello: 'こんにちは、世界'
+    fr: {
+        index: {
+            title: "Hébergement de Blockchain"
         }
     }
 }
