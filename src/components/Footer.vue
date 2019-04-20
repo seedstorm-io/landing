@@ -5,24 +5,24 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <h5 class="mb-4 font-weight-normal">Services</h5>
-                        <p><a href="/services">All our Services</a></p>
-                        <p><a href="/status">Service Status</a></p>
-                        <p><a href="/account">My Account</a></p>
-                        <p><a href="/support">Get Support</a></p>
+                        <p><router-link to="services">All our Services</router-link></p>
+                        <p><router-link to="status">Service Status</router-link></p>
+                        <p><router-link to="account">My Account</router-link></p>
+                        <p><router-link to="support">Get Support</router-link></p>
                     </div>
                     <div class="col-lg-3">
                         <h5 class="mb-4 font-weight-normal">Useful Links</h5>
-                        <p><a href="/privacy-policy">Privacy Policy</a></p>
-                        <p><a href="/affiliation">Become Affiliated</a></p>
+                        <p><router-link to="privacy-policy">Privacy Policy</router-link></p>
+                        <p><router-link to="affiliation">Become Affiliated</router-link></p>
                         <p><a href="https://github.com/seedstormio" target="_blank">GitHub Repository</a></p>
-                        <p><a href="medium">See the Blog</a></p>
+                        <p><router-link to="medium">See the Blog</router-link></p>
                     </div>
                     <div class="col-lg-3">
                         <h5 class="mb-4 font-weight-normal">Contact</h5>
                         <p class="text-muted"><i class="fas fa-envelope mr-2"></i><a href="mailto:contact@seedstorm.io">contact@seedstorm.io</a></p>
                         <p class="text-muted"><i class="fab fa-twitter mr-2"></i> <a href="https://twitter.com/safeblock_io" target="_blank">seedstorm_io</a></p> 
                         <p class="text-muted"><i class="fab fa-discord mr-2"></i> <a href="https://discord.gg/zA6PKqU" target="_blank">discord.gg/zA6PKqU</a></p> 
-                        <p class="text-muted"><i class="fas fa-key mr-2"></i> <a href="/safeblock-pgp-key.asc" title="Fingerprint: 4BD8 8D4C 1882 5867 790E  4528 5681 6686 F338 3210" target="_blank">PGP: F3383210</a></p> 
+                        <p class="text-muted"><i class="fas fa-key mr-2"></i> <a to="safeblock-pgp-key.asc" title="Fingerprint: 4BD8 8D4C 1882 5867 790E  4528 5681 6686 F338 3210" target="_blank">PGP: F3383210</a></p> 
                     </div>
                     <div class="col-lg-3">
                         <h5 class="mb-4 font-weight-normal">Subscribe</h5>
@@ -46,7 +46,7 @@
                         Copyright &copy; {{ new Date().getFullYear() }} SeedStorm.io - All Rights Reserved - Source on GitHub
                     </div>
                     <div class="col-lg-4 text-right">
-                        License MIT &bull; Powered by Digital Ocean
+                        License MIT &bull; Hosted on Windows Azure
                     </div>
                 </div>
             </div>
