@@ -6,7 +6,7 @@
           <h1 class="display-5 font-weight-light">{{ content }}</h1>
         </div>
         <div class="col-lg-3 text-right">
-          <router-link to="get-started" class="btn btn-lg btn-dark border-0 rounded-0">{{ button }}</router-link>
+          <router-link :to="to" class="btn btn-lg btn-dark border-0 rounded-0">{{ button }}</router-link>
         </div>
       </div>
     </div>
@@ -18,7 +18,8 @@ export default {
   name: 'CallToAction',
   props: {
     content: String,
-    button: String
+    button: String,
+    to: String
 
   },
   components: {
