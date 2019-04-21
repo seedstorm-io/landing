@@ -13,13 +13,16 @@
                         <router-link to="/" class="nav-link">Home <span class="sr-only">(current)</span></router-link>
                     </li>
                     <li class="nav-item px-2">
+                        <router-link to="/ico" class="nav-link">ICO</router-link>
+                    </li>
+                    <li class="nav-item px-2">
                         <router-link to="/services" class="nav-link">Services</router-link>
                     </li>
                     <li class="nav-item px-2">
                         <router-link to="/pricing" class="nav-link">Pricing</router-link>
                     </li>
                     <li class="nav-item px-2">
-                        <router-link to="/documentation" class="nav-link">Documentation</router-link>
+                        <a href="//docs.seedstorm.io" target="_blank" class="nav-link">Documentation</a>
                     </li>
                     <li class="nav-item px-2">
                         <router-link to="/support" class="nav-link">Support</router-link>
