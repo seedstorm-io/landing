@@ -3,31 +3,31 @@
         <div class="container">
             <span class="navbar-text inner">
                 {{ latestNews.title }}
-                <a :href="latestNews.link" target="_blank" class="ml-1 inherit">Read More</a>
+                <a :href="latestNews.link" target="_blank" class="ml-1 inherit">{{ $t("banner.redmore") }}</a>
             </span>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <router-link to="login" v-if="!logged" class="nav-link">Login</router-link>
+                        <router-link to="login" v-if="!logged" class="nav-link">{{ $t("banner.login") }}</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link to="create-account" v-if="!logged" class="nav-link">Create Account</router-link>
+                        <router-link to="create-account" v-if="!logged" class="nav-link">{{ $t("banner.createaccount") }}</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link to="dashboard" v-if="logged" class="nav-link">Welcome back Clint</router-link>
+                        <router-link to="dashboard" v-if="logged" class="nav-link">{{ $t("banner.welcomeback", ['clint']) }}</router-link>
                     </li>
                     <li class="nav-item">
-                        <a href="#" @click="logout" v-if="logged" class="nav-link">Logout</a>
+                        <a href="#" @click="logout" v-if="logged" class="nav-link">{{ $t("banner.logout") }}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="far fa-smile"></i></a>
                         <div class="dropdown-menu shadow border-0 feedback">
                             <form class="px-3 py-1 pb-3" v-on:submit="submitFeedback" action="#">
                                 <div class="form-group">
-                                    <label>Enter Feedback</label>
-                                    <textarea class="form-control" v-model="feedback" required rows="5" placeholder="Suggest a new feature or simply send us a feedback"></textarea>
+                                    <label>{{ $t('banner.enterfeedback') }}</label>
+                                    <textarea class="form-control" v-model="feedback" required rows="5" :placeholder="$t('banner.suggestfeature')"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-block btn-xs btn-outline-primary">Post Feedback</button>
+                                <button type="submit" class="btn btn-block btn-xs btn-outline-primary">{{ $t('banner.postfeedback') }}</button>
                             </form>
                         </div>
                     </li>

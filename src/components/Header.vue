@@ -4,33 +4,33 @@
             <router-link to="/" class="navbar-brand mr-5 ">
                 <img src="../assets/logo.png" style="height: 40px;" />
             </router-link>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarHeader">
                 <ul class="navbar-nav m-auto">
                     <li class="nav-item px-2">
-                        <router-link to="/" class="nav-link">Home <span class="sr-only">(current)</span></router-link>
+                        <router-link to="/" class="nav-link">{{ $t('header.home') }} <span class="sr-only">(current)</span></router-link>
                     </li>
                     <li class="nav-item px-2">
-                        <router-link to="/ico" class="nav-link">ICO</router-link>
+                        <router-link to="/ico" class="nav-link">{{ $t('header.ico') }}</router-link>
                     </li>
                     <li class="nav-item px-2">
-                        <router-link to="/services" class="nav-link">Services</router-link>
+                        <router-link to="/services" class="nav-link">{{ $t('header.services') }}</router-link>
                     </li>
                     <li class="nav-item px-2">
-                        <router-link to="/pricing" class="nav-link">Pricing</router-link>
+                        <router-link to="/pricing" class="nav-link">{{ $t('header.pricing') }}</router-link>
                     </li>
                     <li class="nav-item px-2">
-                        <a href="//docs.seedstorm.io" target="_blank" class="nav-link">Documentation</a>
+                        <a href="//docs.seedstorm.io" target="_blank" class="nav-link">{{ $t('header.documentation') }}</a>
                     </li>
                     <li class="nav-item px-2">
-                        <router-link to="/support" class="nav-link">Support</router-link>
+                        <router-link to="/support" class="nav-link">{{ $t('header.support') }}</router-link>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <ButtonCTA to="create-account" v-if="!logged" value="Get Started" />
-                    <ButtonCTA to="dashboard" v-if="logged" value="My Dashboard" />
+                    <ButtonCTA to="create-account" v-if="!logged" value="$t('header.getstarted')" />
+                    <ButtonCTA to="dashboard" v-if="logged" :value="$t('header.mydashboard')" />
                 </form>
             </div>
         </div>
