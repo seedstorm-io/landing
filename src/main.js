@@ -24,7 +24,7 @@ const nprogress = new NProgress({ parent: '.nprogress-container' })
 
 import { messages } from './internationalization'
 const i18n = new VueI18n({
-  locale: 'ja',
+  locale: 'en',
   messages,
 })
 
@@ -46,6 +46,14 @@ new Vue({
         name: 'pricing',
         path: '/pricing',
         component: () => import('./pages/Pricing.vue'),
+        meta: {
+          layout: "normal"
+        }
+      },
+      {
+        name: 'ico',
+        path: '/ico',
+        component: () => import('./pages/ICO.vue'),
         meta: {
           layout: "normal"
         }
