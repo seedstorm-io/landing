@@ -54,7 +54,7 @@ export default {
         axios
             .get(endpoint + "/announces/announcements")
             .then(response => {
-                this.loaded = true;
+                this.loaded = true
                 this.announcements = response.data
             })
     }
