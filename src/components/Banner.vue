@@ -17,7 +17,7 @@
                         <router-link to="dashboard" v-if="logged" class="nav-link">Welcome back Clint</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link to="logout" v-if="logged" class="nav-link">Logout</router-link>
+                        <a href="#" @click="logout" v-if="logged" class="nav-link">Logout</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="far fa-smile"></i></a>
@@ -33,13 +33,10 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="lang-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="flag-icon flag-icon-gb"></span>
+                            <span :class="actualFlag"></span>
                         </a>
                         <div class="dropdown-menu shadow border-0" aria-labelledby="lang-dropdown">
-                            <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-gb"></span> &nbsp;English</a>
-                            <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-fr"></span> &nbsp;French</a>
-                            <!-- <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-es"></span> &nbsp;Spanish</a> -->
-                            <!-- <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-cn"></span> &nbsp;Chinese</a> -->
+                            <a v-on:click="changeCulture(lang)" v-for="(lang, i) in langs" :key="`Lang${i}`" class="dropdown-item" href="#"><span :class="`flag-icon flag-icon-${lang.flag}`"></span> &nbsp;{{ lang.name }}</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -62,6 +59,9 @@
 
 <script>
 import { endpoint } from '../environment.js'
+import { cultures } from '../internationalization'
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
 import axios from 'axios'
 import '../../node_modules/flag-icon-css/css/flag-icon.min.css'
 
@@ -71,17 +71,39 @@ export default {
         return {
             feedback: null,
             latestNews: {},
-            logged: false
+            logged: false,
+            langs: cultures,
+            actualFlag: "flag-icon flag-icon-gb"
         }
     },
     methods: {
+        changeCulture(culture){
+            this.$i18n.locale = culture.culture
+            this.actualFlag = 'flag-icon flag-icon-' + culture.flag
+        },
+        logout()
+        {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "Do you really want to log out ?",
+                type: 'error',
+                showCancelButton: true,
+                confirmButtonColor: '#dd3333',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes'
+            }).then((result) => {
+                if (result.value) {
+                    this.$router.push("/logout")
+                }
+            })
+        },
         submitFeedback(event) {
-            // axios
-            // .post("//api.seedstorm.io/api/feedbacks", { feedback: this.feedback })
-            // .then(response => {
-            //     this.$snackbar.show({text: "Thank you for your feedback ! 🚀", pos: 'bottom-center'});
-            // })
-            event.preventDefault();
+            axios
+            .post(endpoint + "/feedbacks", { "content": this.feedback })
+            .then(response => {
+                this.$snackbar.show({text: "Thank you for your feedback ! 🚀", pos: 'bottom-center'});
+            })
+            // event.preventDefault();
         }
     },
     mounted() {
