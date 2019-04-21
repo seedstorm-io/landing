@@ -28,6 +28,7 @@ import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 // import CookieLaw from 'vue-cookie-law'
 import 'bootstrap'
+import axios from 'axios'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css'
 
@@ -54,6 +55,9 @@ export default {
     }
   },
   created: function() {
+    if (localStorage.getItem("Token")) {
+      axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('Token');
+    }
     this.globalReadOnlyProperty = "This won't change it";
   }
 }
@@ -65,6 +69,11 @@ export default {
 #app
 {
     font-family: 'Source Sans Pro', sans-serif;
+    background-image: url(./assets/background.png);
+    background-size: 3400px 900px;
+    background-position-x: center;
+    background-position-y: 155px;
+    background-repeat: no-repeat;
 }
 
 .native {
