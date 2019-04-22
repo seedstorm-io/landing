@@ -55,7 +55,7 @@ export const messages = {
             ico: 'ICO',
             services: 'Services',
             pricing: 'Pricing',
-            documentation: 'Documentation',
+            documentation: 'API Documentation',
             support: 'Support',
             getstarted: 'Get Started',
             mydashboard: 'My Dashboard'
