@@ -33,6 +33,11 @@ new Vue({
   nprogress,
   router: new Router({
     mode: 'history',
+    // methods: { 
+    //   scrollToTop() {
+    //     window.scrollTo(0,0);
+    //   }
+    // },
     routes: [{
         name: 'index',
         path: '/',
@@ -102,6 +107,11 @@ new Vue({
         meta: {
           layout: "normal"
         }
+      },
+      {
+        name: 'support',
+        path: '/support',
+        component: () => import('./pages/Support.vue'),
       },
       {
         path: '*',
