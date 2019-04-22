@@ -22,6 +22,7 @@
     "node-sass": "^4.11.0",
     "node-snackbar": "^0.1.15",
     "popper.js": "^1.15.0",
+    "sass-loader": "^7.1.0",
     "sweetalert2": "^8.8.5",
     "vue": "^2.6.10",
     "vue-cookie-law": "^1.10.0",
