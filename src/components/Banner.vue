@@ -1,6 +1,6 @@
 <template>
-    <nav id="banner" class="navbar navbar-expand-lg navbar-light small py-0">
-        <div class="container">
+    <nav id="banner" :class="(isDashboardLayout() ? 'dashboard':'') + ' navbar navbar-expand-lg navbar-light small py-0'">
+        <div :class="isDashboardLayout() ? 'container-fluid':'container'">
             <span class="navbar-text inner">
                 {{ latestNews.title }}
                 <a :href="latestNews.link" target="_blank" class="ml-1 inherit">{{ $t("banner.redmore") }}</a>
@@ -77,6 +77,9 @@ export default {
         }
     },
     methods: {
+        isDashboardLayout() {
+        return this.$route.meta.layout == "dashboard";
+        },
         changeCulture(culture){
             this.$i18n.locale = culture.culture
             this.actualFlag = 'flag-icon flag-icon-' + culture.flag
@@ -125,6 +128,12 @@ export default {
     background-color: #fafafa;
     color: #AAAAAA;
     height: 40px;
+}
+
+#banner.dashboard
+{
+  padding: 15px 50px;
+  z-index: 99999;
 }
 
 #header.navbar-light .navbar-nav .nav-link {

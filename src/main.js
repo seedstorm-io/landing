@@ -80,6 +80,14 @@ new Vue({
         }
       },
       {
+        name: 'explore-node',
+        path: '/explore/:id',
+        component: () => import('./pages/ExploreNode.vue'),
+        meta: {
+          layout: "normal"
+        }
+      },
+      {
         name: 'login',
         path: '/login',
         component: () => import('./pages/Login.vue'),
@@ -105,7 +113,7 @@ new Vue({
         path: '/dashboard',
         component: () => import('./pages/Dashboard.vue'),
         meta: {
-          layout: "normal"
+          layout: "dashboard"
         }
       },
       {

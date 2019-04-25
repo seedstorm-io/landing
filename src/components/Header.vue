@@ -1,14 +1,14 @@
 <template>
-    <nav id="header" class="navbar navbar-expand-lg sticky-top navbar-light">
-        <div class="container">
-            <router-link to="/" class="navbar-brand mr-5 ">
+    <nav id="header" :class="(isDashboardLayout() ? 'dashboard shadow-sm':'') + ' navbar navbar-expand-lg sticky-top navbar-light'">
+        <div :class="isDashboardLayout() ? 'container-fluid':'container'">
+            <router-link to="/" class="navbar-brand mr-5">
                 <img src="../assets/logo.png" style="height: 40px;" />
             </router-link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarHeader">
-                <ul class="navbar-nav m-auto">
+            <div :class="(isDashboardLayout() ? 'ml-5 ':'') + 'collapse navbar-collapse'" id="navbarHeader">
+                <ul :class="'navbar-nav ' + (isDashboardLayout() ? '':'ml-auto')">
                     <li class="nav-item px-2">
                         <router-link to="/" exact class="nav-link">{{ $t('header.home') }} <span class="sr-only">(current)</span></router-link>
                     </li>
@@ -28,9 +28,9 @@
                         <router-link to="/support" exact class="nav-link">{{ $t('header.support') }}</router-link>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <ButtonCTA to="create-account" v-if="!logged" :value="$t('header.getstarted')" />
-                    <ButtonCTA to="dashboard" v-if="logged" :value="$t('header.mydashboard')" />
+                <form class="form-inline my-2 ml-auto my-lg-0">
+                    <ButtonCTA to="/create-account" :class="isDashboardLayout() ? 'tiny':''" v-if="!logged" :value="$t('header.getstarted')" />
+                    <ButtonCTA to="/dashboard" :class="isDashboardLayout() ? 'tiny':''" v-if="logged" :value="$t('header.mydashboard')" />
                 </form>
             </div>
         </div>
@@ -52,6 +52,11 @@ export default {
     return {
       logged: false,
       fullname: ''
+    }
+  },
+  methods: {
+    isDashboardLayout() {
+      return this.$route.meta.layout == "dashboard";
     }
   },
   mounted() {
@@ -81,7 +86,11 @@ export default {
 <style scoped>
 #header:not(.shrink)
 {
-    margin: 25px 0;
+    padding: 25px 20px;
+}
+#header:not(.shrink).dashboard
+{
+  padding: 17px 50px;
 }
 
 #header

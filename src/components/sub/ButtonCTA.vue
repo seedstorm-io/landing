@@ -24,4 +24,8 @@ a.btn.btn-outline-dark {
     margin: 10px;
     white-space: normal;
 }
+a.btn.btn-outline-dark.tiny
+{
+    padding: 8px 25px;
+}
 </style>
