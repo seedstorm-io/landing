@@ -62,6 +62,12 @@ export const messages = {
         },
         explore: {
             deploy: "Deploy {0}"
+        },
+        support: {
+            title: 'Get Support',
+            description: '{0} provides a secure and easy hosting solution for individuals<br />and companies to deploy and host full nodes or masternodes.',
+            getsupport: 'Get Support',
+            documentation: 'API Documentation'
         }
     },
     fr: {
