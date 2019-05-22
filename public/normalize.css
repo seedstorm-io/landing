@@ -7,12 +7,47 @@ body{
     position: relative
 }
 
-.loader > div
+.loader > div, .absolute-center
 {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.bg-light
+{
+    background-color: #f9fbfd !important;
+}
+
+.pane
+{
+    padding: 50px 0;
+}
+
+.pane:not(.nobar)
+{
+    border-top: 1px solid #eeeeee;
+}
+
+.pane.auto
+{
+    min-height: calc(100vh - 158px);
+}
+
+.pane.air
+{
+    padding: 150px 0 !important;
+}
+
+.pane.semi.air
+{
+    padding: 80px 0 200px !important;
+}
+
+.pane.centered
+{
+    text-align: center;
 }
 
 .fade-enter-active,
@@ -27,8 +62,9 @@ body{
     opacity: 0
 }
 
-.inherit a{
-    color: inherit;
+.inherit a, .inherit, .inherit:hover {
+    color: inherit !important;
+    text-decoration: none;
 }
 
 .dropdown-menu
@@ -37,12 +73,26 @@ body{
 }
 
 .btn:not(.btn-custom) {
-    padding: 10px 30px;
     font-weight: 400;
     text-transform: uppercase;
     font-size: 10pt;
+    padding: 10px 30px;
     border-radius: 5px;
     transition: all 0.15s ease;
+}
+
+.btn.btn-sm:not(.btn-custom) {
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 9pt;
+    padding: 7px 25px;
+    border-radius: 5px;
+    transition: all 0.15s ease;
+}
+
+.btn.btn-lg
+{
+    font-size: 12pt;
 }
 
 .btn.btn-shadow {
@@ -50,11 +100,16 @@ body{
 }
 
 .btn.btn-primary {
-    background-color: #007aff;
+    background-color: #1e87f0;
 }
 
 .btn.btn-dark {
     background-color: #24292e;
+}
+
+.bg-primary .btn.btn-dark
+{
+    background-color: #272a33;
 }
 
 .btn.btn-outline-dark {
@@ -69,8 +124,37 @@ body{
     white-space: normal;
 }
 
+.nav .nav-link.active
+{
+    font-weight: bold;
+    border-bottom: 1px solid;
+}
+
 .jumbotron p {
     color: #697A89;
     margin-bottom: 30px;
     font-size: 14px;
 }
+
+pre
+{
+    background-color: #efefef;
+    padding: 10px;
+}
+
+.height-75
+{
+    height: 75px;
+}
+
+@media (min-width: 1400px) {
+    .container {
+      max-width: 1200px !important;
+    }
+  }
+
+@media (min-width: 1200px) {
+    .container.large {
+      max-width: 1300px !important;
+    }
+  }
