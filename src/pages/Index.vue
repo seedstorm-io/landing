@@ -2,15 +2,18 @@
     <div>
         <Hero>
             <div class="container">
-                <h1 class="display-4 native font-weight-500">
-                    <vue-typer text='Blockchain Hosting Platform' :type-delay='120' :repeat='0' caret-animation='smooth'></vue-typer>
+                <h1 v-if="this.displayTyper" class="display-4 native font-weight-500">
+                    <vue-typer :text='$t("index.title")' :type-delay='120' :repeat='0' caret-animation='smooth'></vue-typer>
                 </h1>
-                <!-- <p><a href="">SeedStorm.io</a> provide a blockchain hosting solution for individuals or companies,<br />to host full-nodes or masternodes for security, monitoring or simply for convenience.</p> -->
-                <p><a href="">SeedStorm.io</a> provides a secure and easy hosting solution for individuals<br />and companies to deploy and host full nodes or masternodes.</p>
+                <h1 v-if="!this.displayTyper" class="display-4 native font-weight-500">
+                    {{ $t("index.title") }}
+                </h1>
+                <p v-html="$t('index.description', ['<a href=\'https://seedstorm.io\'>SeedStorm.io</a>'])"></p>
                 <div class="form-group">
-                    <Button to="get-started" class="btn button btn-shadow btn-primary mr-2">Getting Started</Button>
-                    <Button to="explore" class="btn btn-shadow btn-dark ml-2">
-                        <i class="fas fa-cubes"></i> Explore Blockchains
+                    <Button v-if="this.logged" to="/dashboard" class="btn button btn-shadow btn-primary mr-2">{{ $t('index.gotodashboard') }}</Button>
+                    <Button v-if="!this.logged" to="/create-account" class="btn button btn-shadow btn-primary mr-2">{{ $t('index.gettingstarted') }}</Button>
+                    <Button to="/explore" class="btn btn-shadow btn-dark ml-2">
+                        <i class="fas fa-cubes"></i> {{ $t('index.exploreblockchain') }}
                     </Button>
                 </div>
             </div>
@@ -23,48 +26,55 @@
         </Section>
         <Section>
             <div class="mt-5 text-center">
-                <h2>Frequently Asked Questions</h2>
-                <p class="mb-4 pb-3">Find the answer to your questions.</p>
+                <h2>{{ $t('index.faq') }}</h2>
+                <p class="mb-4 pb-3">{{ $t("index.faqdescription") }}</p>
             </div>
             <FAQ />
         </Section>
-        <CallToAction content="Don't loose your money, stake your coins on SeedStorm.io" button="Get Started" />
+        <CallToAction content="Don't loose your money, stake your coins on SeedStorm.io" button="Get Started" to="create-account" />
+        <CookieConsent />
     </div>
 </template>
 
 <script>
+import { endpoint, isLogged } from '../environment.js'
 import CallToAction from '../components/CallToAction.vue'
 import FAQ from '../components/FAQ.vue'
 import Hero from '../components/Hero.vue'
 import Section from '../components/Section.vue'
 import Announcement from '../components/Announcement.vue'
 import Button from '../components/sub/Button.vue'
+import CookieConsent from '../components/sub/CookieConsent.vue'
 
 export default {
-  name: 'Index',
-  components: {
-      Hero,
-      Announcement,
-      Button,
-      CallToAction,
-      Section,
-      FAQ
-  },
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+    name: 'Index',
+    components: {
+        Hero,
+        Announcement,
+        Button,
+        CallToAction,
+        Section,
+        FAQ,
+        CookieConsent
+    },
+    data() {
+        return {
+            logged: false,
+            displayTyper: true
+        }
+    },
+    mounted() {
+        this.logged = isLogged()
+        if (localStorage.getItem("FirstRun") === null) {
+            localStorage.setItem("FirstRun", "true")
+        }
+        else
+        {
+            this.displayTyper = false;
+        }
     }
-  }
 }
 </script>
 
 <style>
-#app
-{
-    background-image: url(../assets/background.png);
-    background-size: 3400px 900px;
-    background-position-x: center;
-    background-position-y: 155px;
-    background-repeat: no-repeat;
-}
 </style>

@@ -3,13 +3,13 @@
         <div id="loader" class="loader" style="height: 60vh;" v-if="!this.loaded">
             <half-circle-spinner :animation-duration="1000" :size="50" color="#555555" />
         </div>
-        <div class="row">
+        <div class="row" v-if="this.loaded">
             <div class="col-lg-12 text-center">
                 <h2>Explore our Blockchain Nodes</h2>
                 <p class="mb-4 pb-3">Find here all our brilliant nodes.</p>
             </div>
         </div>
-        <div class="row">
+        <div class="row" v-if="this.loaded">
             <div class="col-lg-12">
                 <ul class="nav border-bottom" id="myTab" role="tablist">
                     <li class="nav-item">
@@ -32,7 +32,7 @@
                     <div class="tab-pane fade show active" id="allnodes" role="tabpanel">
                         <div class="row">
                             <div v-for="node in allNodes()" :key="node.id" class="col-lg-4 col-sm-6">
-                                <div class="card border-0 shadow mb-4">
+                                <div class="card border-0 shadow-sm mb-4">
                                     <div class="card-body">
                                         <router-link :to="'/explore/' + node.id">
                                             <i class="far float-right info mt-1 fa-question-circle"></i>

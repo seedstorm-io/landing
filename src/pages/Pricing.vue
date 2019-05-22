@@ -1,5 +1,5 @@
 <template>
-    <Section class="" mode="xs" style="padding-bottom: 100px !important;">
+    <Section class="bg-white" mode="xs" style="padding-bottom: 100px !important;">
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h2>Our Pricing Plans</h2>
@@ -9,7 +9,23 @@
         <div class="row mt-5">
             <div class="col-lg-12">
                 <div class="row">
-                    <div class="col-lg-3">
+                    <div class="col-lg-4">
+                        <div class="card border border-light shadow- text-center price">
+                            <div class="card-body pt-0 pt-4 px-4 pb-3">
+                                <img class="mb-4 mt-3 icon" src="" />
+                                <h3 class="card-title">100€<small> /month</small>
+                                </h3>
+                                <h4>Business </h4>
+                                <p class="lead">For the best</p>
+                                <hr />
+                                <p>lol</p>
+                                <p>lol</p>
+                                <p>lol</p>
+                                <a href="#" class="btn my-4 btn-outline-primary">Purchase</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
                         <div class="card border border-light shadow text-center price">
                             <div class="card-body pt-0 pt-4 px-4 pb-3">
                                 <img class="mb-4 mt-3 icon" src="" />
@@ -25,40 +41,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="card border border-light shadow text-center price">
-                            <div class="card-body pt-0 pt-4 px-4 pb-3">
-                                <img class="mb-4 mt-3 icon" src="" />
-                                <h3 class="card-title">100€<small> /month</small>
-                                </h3>
-                                <h4>Business </h4>
-                                <p class="lead">For the best</p>
-                                <hr />
-                                <p>lol</p>
-                                <p>lol</p>
-                                <p>lol</p>
-                                <a href="#" class="btn my-4 btn-outline-primary">Purchase</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card border border-light shadow text-center price">
-                            <div class="card-body pt-0 pt-4 px-4 pb-3">
-                                <img class="mb-4 mt-3 icon" src="" />
-                                <h3 class="card-title">100€<small> /month</small>
-                                </h3>
-                                <h4>Business </h4>
-                                <p class="lead">For the best</p>
-                                <hr />
-                                <p>lol</p>
-                                <p>lol</p>
-                                <p>lol</p>
-                                <a href="#" class="btn my-4 btn-outline-primary">Purchase</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card shadow border border-light text-center price">
+                    <div class="col-lg-4">
+                        <div class="card shadow- border border-light text-center price">
                             <div class="card-body pt-0 pt-4 px-4 pb-3">
                                 <img class="mb-4 mt-3 icon" src="" />
                                 <h3 class="card-title">100€<small> /month</small>

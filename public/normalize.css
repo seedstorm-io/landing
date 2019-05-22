@@ -136,15 +136,21 @@ body{
     font-size: 14px;
 }
 
-pre
-{
-    background-color: #efefef;
-    padding: 10px;
-}
-
 .height-75
 {
     height: 75px;
+}
+
+.markdown h2
+{
+    margin-top: 3rem!important;
+    font-size: 1.5rem;
+}
+
+.markdown pre
+{
+    background-color: #efefef;
+    padding: 10px;
 }
 
 @media (min-width: 1400px) {

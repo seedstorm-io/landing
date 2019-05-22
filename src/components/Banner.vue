@@ -27,7 +27,7 @@
                                     <label>{{ $t('banner.enterfeedback') }}</label>
                                     <textarea class="form-control" v-model="feedback" required rows="5" :placeholder="$t('banner.suggestfeature')"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-block btn-xs btn-outline-primary">{{ $t('banner.postfeedback') }}</button>
+                                <button type="submit" class="btn btn-block btn-xs btn-outline-primary" :disabled="this.afterPostedFeedback">{{ $t('banner.postfeedback') }}</button>
                             </form>
                         </div>
                     </li>
@@ -73,7 +73,8 @@ export default {
             latestNews: {},
             logged: false,
             langs: cultures,
-            actualFlag: "flag-icon flag-icon-gb"
+            actualFlag: "flag-icon flag-icon-gb",
+            afterPostedFeedback: false
         }
     },
     methods: {
@@ -100,13 +101,16 @@ export default {
                 }
             })
         },
-        submitFeedback() {
+        submitFeedback(e) {
+            var $this = this;
             axios
             .post(endpoint + "/feedbacks", { "content": this.feedback })
             .then(function() {
-                this.$snackbar.show({text: "Thank you for your feedback ! 🚀", pos: 'bottom-center'});
+                $this.feedback = ""
+                $this.afterPostedFeedback = true
+                $this.$snackbar.show({text: "Thank you for your feedback ! 🚀", pos: 'bottom-center'});
             })
-            // event.preventDefault();
+            e.preventDefault();
         }
     },
     mounted() {

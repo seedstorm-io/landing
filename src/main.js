@@ -25,6 +25,7 @@ Vue.component('v-gravatar', Gravatar);
 const nprogress = new NProgress({ parent: '.nprogress-container' })
 
 import { messages } from './internationalization'
+
 const i18n = new VueI18n({
   locale: 'en',
   messages,
@@ -40,6 +41,10 @@ new Vue({
     //     window.scrollTo(0,0);
     //   }
     // },
+    watch: {
+      '$route': function() {
+      }
+    },
     routes: [{
         name: 'index',
         path: '/',

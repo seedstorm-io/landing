@@ -21,19 +21,16 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-8">
-                        <h4 class="mt-5">What is Stratis ?</h4>
+                        <!--<h4 class="mt-5">What is Stratis ?</h4>
                         <p>Stratis is a blockchain development platform created to provide solutions to businesses wishing to make use of blockchain technology but may be lacking the technological know-how or sufficient capital.</p>
                         <p>The platform allows users to create and deploy blockchain-based applications using a simple programming language that is familiar with many developers; C+ and Microsoft ’s.Net framework.</p>
                         <p>Stratis aims to simplify the process of blockchain adoption for companies and make it cheaper by allowing the companies to deploy their blockchain applications on the Stratis blockchain using the Stratis infrastructure.</p>
                         <h4 class="mt-5">Node Requirement</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <h4 class="mt-5">StormCTL Commands</h4>
-<vue-markdown>
-``` bash
-$ stormctl deploy stratis
-```
-
-</vue-markdown>
+                        <h4 class="mt-5">StormCTL Commands</h4>-->
+                        <div class="markdown">
+                            <vue-markdown v-if="this.node.markdownDescription !== null" :source="this.node.markdownDescription"></vue-markdown>
+                        </div>
                     </div>
                     <div class="col-lg-4">
                         <h4 class="mt-5 mb-4">Maintainer Details</h4>

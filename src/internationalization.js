@@ -59,6 +59,9 @@ export const messages = {
             support: 'Support',
             getstarted: 'Get Started',
             mydashboard: 'My Dashboard'
+        },
+        explore: {
+            deploy: "Deploy {0}"
         }
     },
     fr: {
@@ -90,6 +93,9 @@ export const messages = {
             support: 'Support',
             getstarted: 'Commencer',
             mydashboard: 'Mon Tableau de Bord'
+        },
+        explore: {
+            deploy: "Déployer {0}"
         }
     },
     zn: {
