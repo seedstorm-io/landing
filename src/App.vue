@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import { generateTitle } from './environment.js'
+
 import NprogressContainer from 'vue-nprogress/src/NprogressContainer'
 // import { BreedingRhombusSpinner } from 'epic-spinners'
 import Banner from './components/Banner.vue'
@@ -42,19 +44,30 @@ export default {
     // CookieLaw
     // BreedingRhombusSpinner
   },
-  computed:  {
+  data() {
+    return {
+    }
+  },
+  computed: {
     layout() {
-      if(this.$route.meta.layout)
-      {
-        if(this.$route.meta.layout == "blank")
-        {
+      if (this.$route.meta.layout) {
+        if (this.$route.meta.layout == "blank") {
           return false;
         }
       }
       return true;
     }
   },
-  created: function() {
+  watch: {
+    '$route': {
+      handler: function($this)
+      {
+        generateTitle($this.meta.title)
+        window.scrollTo(0, 0)
+      }
+    }
+  },
+  created: function () {
     if (localStorage.getItem("Token")) {
       axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('Token');
     }

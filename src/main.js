@@ -9,6 +9,7 @@ import VueMarkdown from 'vue-markdown'
 
 import snackbar from "node-snackbar"
 import 'node-snackbar/dist/snackbar.min.css'
+
 Object.defineProperty(Vue.prototype, '$snackbar', { value: snackbar });
 
 Vue.config.devtools = true
@@ -36,20 +37,12 @@ new Vue({
   nprogress,
   router: new Router({
     mode: 'history',
-    // methods: { 
-    //   scrollToTop() {
-    //     window.scrollTo(0,0);
-    //   }
-    // },
-    watch: {
-      '$route': function() {
-      }
-    },
     routes: [{
         name: 'index',
         path: '/',
         component: () => import('./pages/Index.vue'),
         meta: {
+          title: "Blockchain Hosting Platform",
           layout: "normal",
           showProgressBar: true
         }
@@ -59,7 +52,8 @@ new Vue({
         path: '/pricing',
         component: () => import('./pages/Pricing.vue'),
         meta: {
-          layout: "normal"
+          layout: "normal",
+          title: "Our Pricing"
         }
       },
       {
@@ -67,7 +61,8 @@ new Vue({
         path: '/ico',
         component: () => import('./pages/ICO.vue'),
         meta: {
-          layout: "normal"
+          layout: "normal",
+          title: "Initial Coin Offering"
         }
       },
       {
@@ -75,7 +70,8 @@ new Vue({
         path: '/privacy-policy',
         component: () => import('./pages/PrivacyPolicy.vue'),
         meta: {
-          layout: "normal"
+          layout: "normal",
+          title: "Privacy Policy"
         }
       },
       {
@@ -83,7 +79,8 @@ new Vue({
         path: '/explore',
         component: () => import('./pages/Explore.vue'),
         meta: {
-          layout: "normal"
+          layout: "normal",
+          title: "Explore our Blockchain Nodes"
         }
       },
       {
@@ -91,7 +88,8 @@ new Vue({
         path: '/explore/:id',
         component: () => import('./pages/ExploreNode.vue'),
         meta: {
-          layout: "normal"
+          layout: "normal",
+          title: "Explore our Blockchain Nodes"
         }
       },
       {
@@ -99,7 +97,8 @@ new Vue({
         path: '/deploy/:id',
         component: () => import('./pages/DeployNode.vue'),
         meta: {
-          layout: "normal"
+          layout: "normal",
+          title: "Deploy Node",
         }
       },
       {
@@ -107,7 +106,8 @@ new Vue({
         path: '/login',
         component: () => import('./pages/Login.vue'),
         meta: {
-          layout: "normal"
+          layout: "normal",
+          title: "Sign in Account"
         }
       },
       {
@@ -115,7 +115,8 @@ new Vue({
         path: '/create-account',
         component: () => import('./pages/Register.vue'),
         meta: {
-          layout: "normal"
+          layout: "normal",
+          title: "Create an Account"
         }
       },
       {
@@ -135,6 +136,9 @@ new Vue({
         name: 'support',
         path: '/support',
         component: () => import('./pages/Support.vue'),
+        meta: {
+          title: "Get Support",
+        }
       },
       {
         path: '*',
