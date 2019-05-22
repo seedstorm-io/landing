@@ -5,17 +5,17 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <h5 class="mb-4 font-weight-normal">Services</h5>
-                        <p><router-link to="services">All our Services</router-link></p>
-                        <p><router-link to="status">Service Status</router-link></p>
-                        <p><router-link to="account">My Account</router-link></p>
-                        <p><router-link to="support">Get Support</router-link></p>
+                        <p><router-link to="/services">All our Services</router-link></p>
+                        <p><router-link to="/status">Service Status</router-link></p>
+                        <p><router-link to="/account">My Account</router-link></p>
+                        <p><router-link to="/support">Get Support</router-link></p>
                     </div>
                     <div class="col-lg-3">
                         <h5 class="mb-4 font-weight-normal">Useful Links</h5>
-                        <p><router-link to="privacy-policy">Privacy Policy</router-link></p>
-                        <p><router-link to="affiliation">Become Affiliated</router-link></p>
-                        <p><a href="https://github.com/seedstormio" target="_blank">GitHub Repository</a></p>
-                        <p><router-link to="medium">See the Blog</router-link></p>
+                        <p><router-link to="/privacy-policy">Privacy Policy</router-link></p>
+                        <p><router-link to="/affiliation">Become Affiliated</router-link></p>
+                        <p><a href="https://github.com/seedstorm-io" target="_blank">GitHub Repository</a></p>
+                        <p><router-link to="/medium">See the Blog</router-link></p>
                     </div>
                     <div class="col-lg-3">
                         <h5 class="mb-4 font-weight-normal">Contact</h5>
