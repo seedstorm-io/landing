@@ -100,10 +100,10 @@ export default {
                 }
             })
         },
-        submitFeedback(event) {
+        submitFeedback() {
             axios
             .post(endpoint + "/feedbacks", { "content": this.feedback })
-            .then(response => {
+            .then(function() {
                 this.$snackbar.show({text: "Thank you for your feedback ! 🚀", pos: 'bottom-center'});
             })
             // event.preventDefault();

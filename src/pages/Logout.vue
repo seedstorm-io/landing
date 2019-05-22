@@ -12,8 +12,9 @@ export default {
   mounted()
   {
       localStorage.removeItem("Token")
-      this.$router.push("/dashboard")
-      location.reload()
+      document.location.replace("/")
+    //   this.$router.push("/index")
+    //   location.reload()
   }
 }
 </script>

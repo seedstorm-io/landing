@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-light position-relative">
+    <section class="bg-light pane position-relative">
         <form class="mx-auto text-center inner" @submit.prevent="login">
             <h1 class="font-weight-normal">Login to SeedStorm</h1>
             <p class="">Join the most powerful serverless platform in the world and start deploying within seconds.</p>
@@ -62,8 +62,9 @@ export default {
                 localStorage.removeItem("Token")
             })
             setTimeout(() => {
-                this.$router.push("/dashboard")
-                location.reload()
+                document.location.replace("/dashboard")
+                // this.$router.push("/dashboard")
+                // location.reload()
             }, 1500)
             event.preventDefault()
       }
@@ -80,7 +81,6 @@ export default {
 <style scoped>
 section
 {
-    border-top: 1px solid #eeeeee;
     padding: 130px 0 150px;
     height: calc(100vh - 158px)
 }

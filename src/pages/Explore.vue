@@ -1,5 +1,5 @@
 <template>
-    <Section class="bg-light- -pane" mode="md">
+    <Section class="bg-light pane" mode="xs">
         <div id="loader" class="loader" style="height: 60vh;" v-if="!this.loaded">
             <half-circle-spinner :animation-duration="1000" :size="50" color="#555555" />
         </div>
@@ -34,20 +34,19 @@
                             <div v-for="node in allNodes()" :key="node.id" class="col-lg-4 col-sm-6">
                                 <div class="card border-0 shadow mb-4">
                                     <div class="card-body">
-                                        <router-link :to="'/explore/' + node.slug">
+                                        <router-link :to="'/explore/' + node.id">
                                             <i class="far float-right info mt-1 fa-question-circle"></i>
                                         </router-link>
                                         <h4 class="card-title">
                                             <img class="icon" :src="node.icon" :alt="node.title" />
-                                            <router-link :to="'/explore/' + node.slug" class="inherit ml-2">{{ node.title }}
+                                            <router-link :to="'/explore/' + node.id" class="inherit ml-2">{{ node.title }}
                                             </router-link>
                                         </h4>
                                         <p class="card-text">{{ node.description }}</p>
                                         <p class="card-text mt-3"><small class="text-muted">Version {{ node.version }}</small></p>
                                     </div>
                                     <div class="list-group list-group-flush">
-                                        <router-link :to="'/deploy/' + node.slug" class="list-group-item inherit">Deploy
-                                            {{ node.title }}</router-link>
+                                        <router-link :to="'/deploy/' + node.id" class="list-group-item inherit">Deploy {{ node.title }}</router-link>
                                     </div>
                                 </div>
                             </div>
@@ -58,20 +57,19 @@
                             <div v-for="node in fullnodes()" :key="node.id" class="col-lg-4 col-sm-6">
                                 <div class="card border-0 shadow mb-4">
                                     <div class="card-body">
-                                        <router-link :to="'/explore/' + node.slug">
+                                        <router-link :to="'/explore/' + node.id">
                                             <i class="far float-right info mt-1 fa-question-circle"></i>
                                         </router-link>
                                         <h4 class="card-title">
                                             <img class="icon" :src="node.icon" :alt="node.title" />
-                                            <router-link :to="'/explore/' + node.slug" class="inherit ml-2">{{ node.title }}
+                                            <router-link :to="'/explore/' + node.id" class="inherit ml-2">{{ node.title }}
                                             </router-link>
                                         </h4>
                                         <p class="card-text">{{ node.description }}</p>
                                         <p class="card-text mt-3"><small class="text-muted">Version {{ node.version }}</small></p>
                                     </div>
                                     <div class="list-group list-group-flush">
-                                        <router-link :to="'/deploy/' + node.slug" class="list-group-item inherit">Deploy
-                                            {{ node.title }}</router-link>
+                                        <router-link :to="'/deploy/' + node.id" class="list-group-item inherit">Deploy {{ node.title }}</router-link>
                                     </div>
                                 </div>
                             </div>
@@ -82,20 +80,19 @@
                             <div v-for="node in masternodes()" :key="node.id" class="col-lg-4 col-sm-6">
                                 <div class="card border-0 shadow mb-4">
                                     <div class="card-body">
-                                        <router-link :to="'/explore/' + node.slug">
+                                        <router-link :to="'/explore/' + node.id">
                                             <i class="far float-right info mt-1 fa-question-circle"></i>
                                         </router-link>
                                         <h4 class="card-title">
                                             <img class="icon" :src="node.icon" :alt="node.title" />
-                                            <router-link :to="'/explore/' + node.slug" class="inherit ml-2">{{ node.title }}
+                                            <router-link :to="'/explore/' + node.id" class="inherit ml-2">{{ node.title }}
                                             </router-link>
                                         </h4>
                                         <p class="card-text">{{ node.description }}</p>
                                         <p class="card-text mt-3"><small class="text-muted">Version {{ node.version }}</small></p>
                                     </div>
                                     <div class="list-group list-group-flush">
-                                        <router-link :to="'/deploy/' + node.slug" class="list-group-item inherit">Deploy
-                                            {{ node.title }}</router-link>
+                                        <router-link :to="'/deploy/' + node.id" class="list-group-item inherit">Deploy {{ node.title }}</router-link>
                                     </div>
                                 </div>
                             </div>
@@ -111,7 +108,7 @@
 </template>
 
 <script>
-import { endpoint, isLogged } from '../environment.js'
+import { endpoint } from '../environment.js'
 import { HalfCircleSpinner } from 'epic-spinners'
 import axios from 'axios'
 import Section from '../components/Section.vue'
@@ -150,9 +147,6 @@ export default {
             .then(response => {
                 this.loaded = true
                 this.nodes = response.data
-            })
-            .catch(error => {
-                console.log(error)
             })
     }
 }

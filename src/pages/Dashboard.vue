@@ -1,5 +1,5 @@
 <template>
-    <Section class="bg-light pane" mode="xs">
+    <Section class="bg-light semi air pane" mode="xs">
         <div class="row">
             <div class="col-lg-12">
                 <v-gravatar :email="this.data.email" default-img="mm" :size="75" class="float-left mr-3 rounded-circle" />
@@ -31,7 +31,7 @@
                                 <img src="https://cloud-cdn-digitalocean-com.global.ssl.fastly.net/aurora/assets/images/marketplace-hero-aa00844cd5e80f1c27ee739a1f41f9ba.jpg" />
                             </div>
                         </div> -->
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-lg-6">
                                 <div class="card border-0 shadow-sm mt-4">
                                     <div class="card-header bg-white">
@@ -52,7 +52,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
