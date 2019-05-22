@@ -5,6 +5,7 @@ import App from './App.vue'
 import VueTyperPlugin from 'vue-typer'
 import Gravatar from 'vue-gravatar'
 import VueI18n from 'vue-i18n'
+import VueMarkdown from 'vue-markdown'
 
 import snackbar from "node-snackbar"
 import 'node-snackbar/dist/snackbar.min.css'
@@ -16,6 +17,7 @@ Vue.config.productionTip = false
 Vue.use(Router)
 Vue.use(NProgress)
 Vue.use(VueTyperPlugin)
+Vue.use(VueMarkdown)
 Vue.use(VueI18n)
 
 Vue.component('v-gravatar', Gravatar);
@@ -88,6 +90,14 @@ new Vue({
         }
       },
       {
+        name: 'deploy-node',
+        path: '/deploy/:id',
+        component: () => import('./pages/DeployNode.vue'),
+        meta: {
+          layout: "normal"
+        }
+      },
+      {
         name: 'login',
         path: '/login',
         component: () => import('./pages/Login.vue'),
@@ -113,7 +123,7 @@ new Vue({
         path: '/dashboard',
         component: () => import('./pages/Dashboard.vue'),
         meta: {
-          layout: "dashboard"
+          layout: "normal"
         }
       },
       {
