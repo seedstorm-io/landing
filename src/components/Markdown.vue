@@ -1,14 +1,21 @@
 <template>
-    <div id="content"></div>
+    <vue-markdown v-if="this.source !== null" :source="this.source"></vue-markdown>
 </template>
 
 <script>
-import marked from "marked"
+import VueMarkdown from 'vue-markdown'
 
 export default {
-    mounted()
-    {
-        document.getElementById("content").innerHTML = marked(this.$slots["default"][0]["text"])
+    components: {
+        VueMarkdown
+    },
+    data() {
+        return {
+            source: null
+        }
+    },
+    mounted() {
+        this.source = this.$slots["default"][0]["text"]
     }
 }
 </script>
