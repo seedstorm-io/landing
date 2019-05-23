@@ -38,6 +38,7 @@
 
 <script>
 import { endpoint, isLogged } from '../environment.js'
+
 import CallToAction from '../components/CallToAction.vue'
 import FAQ from '../components/FAQ.vue'
 import Hero from '../components/Hero.vue'
