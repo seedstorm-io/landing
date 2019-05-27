@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Section from './Section.vue'
+import Section from './Section'
 
 export default {
     name: "Disqus",

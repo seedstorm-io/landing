@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import NProgress from 'vue-nprogress'
-import App from './App.vue'
+import App from './App'
 import VueTyperPlugin from 'vue-typer'
 import Gravatar from 'vue-gravatar'
 import VueI18n from 'vue-i18n'
@@ -40,7 +40,7 @@ new Vue({
     routes: [{
         name: 'index',
         path: '/',
-        component: () => import('./pages/Index.vue'),
+        component: () => import('./pages/Index'),
         meta: {
           title: "Blockchain Hosting Platform",
           layout: "normal",
@@ -50,7 +50,7 @@ new Vue({
       {
         name: 'pricing',
         path: '/pricing',
-        component: () => import('./pages/Pricing.vue'),
+        component: () => import('./pages/Pricing'),
         meta: {
           layout: "normal",
           title: "Our Pricing"
@@ -59,7 +59,7 @@ new Vue({
       {
         name: 'ico',
         path: '/ico',
-        component: () => import('./pages/ICO.vue'),
+        component: () => import('./pages/ICO'),
         meta: {
           layout: "normal",
           title: "Initial Coin Offering"
@@ -68,7 +68,7 @@ new Vue({
       {
         name: 'privacy',
         path: '/privacy-policy',
-        component: () => import('./pages/PrivacyPolicy.vue'),
+        component: () => import('./pages/PrivacyPolicy'),
         meta: {
           layout: "normal",
           title: "Privacy Policy"
@@ -77,7 +77,7 @@ new Vue({
       {
         name: 'explore',
         path: '/explore',
-        component: () => import('./pages/Explore.vue'),
+        component: () => import('./pages/Explore'),
         meta: {
           layout: "normal",
           title: "Explore our Blockchain Nodes"
@@ -86,7 +86,7 @@ new Vue({
       {
         name: 'explore-node',
         path: '/explore/:id',
-        component: () => import('./pages/ExploreNode.vue'),
+        component: () => import('./pages/ExploreNode'),
         meta: {
           layout: "normal",
           title: "Explore our Blockchain Nodes"
@@ -95,7 +95,7 @@ new Vue({
       {
         name: 'deploy-node',
         path: '/deploy/:id',
-        component: () => import('./pages/DeployNode.vue'),
+        component: () => import('./pages/DeployNode'),
         meta: {
           layout: "normal",
           title: "Deploy Node",
@@ -104,7 +104,7 @@ new Vue({
       {
         name: 'login',
         path: '/login',
-        component: () => import('./pages/Login.vue'),
+        component: () => import('./pages/Login'),
         meta: {
           layout: "normal",
           title: "Sign in Account"
@@ -113,7 +113,7 @@ new Vue({
       {
         name: 'register',
         path: '/create-account',
-        component: () => import('./pages/Register.vue'),
+        component: () => import('./pages/Register'),
         meta: {
           layout: "normal",
           title: "Create an Account"
@@ -122,12 +122,12 @@ new Vue({
       {
         name: 'logout',
         path: '/logout',
-        component: () => import('./pages/Logout.vue'),
+        component: () => import('./pages/Logout'),
       },
       {
         name: 'dashboard',
         path: '/dashboard',
-        component: () => import('./pages/Dashboard.vue'),
+        component: () => import('./pages/Dashboard'),
         meta: {
           layout: "normal"
         }
@@ -135,14 +135,14 @@ new Vue({
       {
         name: 'support',
         path: '/support',
-        component: () => import('./pages/Support.vue'),
+        component: () => import('./pages/Support'),
         meta: {
           title: "Get Support",
         }
       },
       {
         path: '*',
-        component: () => import('./pages/Error404.vue'),
+        component: () => import('./pages/Error404'),
         meta: {
           layout: "normal"
         }

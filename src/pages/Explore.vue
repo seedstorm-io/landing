@@ -108,8 +108,8 @@
 <script>
 import { endpoint } from '../environment.js'
 import axios from 'axios'
-import Section from '../components/Section.vue'
-import Loader from '../components/Loader.vue'
+import Section from '../components/Section'
+import Loader from '../components/Loader'
 
 export default {
     name: 'Explore',

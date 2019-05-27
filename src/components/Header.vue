@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import ButtonCTA from '../components/sub/ButtonCTA.vue'
+import ButtonCTA from '../components/sub/ButtonCTA'
 
 export default {
   name: 'Menu',

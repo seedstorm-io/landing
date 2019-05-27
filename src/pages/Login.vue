@@ -28,7 +28,7 @@
 import { endpoint } from '../environment.js'
 import axios from 'axios'
 import { setTimeout } from 'timers';
-// import Hero from '../components/Hero.vue'
+// import Hero from '../components/Hero'
 // import CookieLaw from 'vue-cookie-law'
 
 export default {

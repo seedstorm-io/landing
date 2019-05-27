@@ -30,9 +30,9 @@ IF YOU DO NOT CONSENT TO THE PROCESSING OF YOUR PERSONAL DATA AS DESCRIBED IN TH
 </template>
 
 <script>
-import Section from '../components/Section.vue'
-import Markdown from '../components/Markdown.vue'
-import Disqus from '../components/Disqus.vue'
+import Section from '../components/Section'
+import Markdown from '../components/Markdown'
+import Disqus from '../components/Disqus'
 
 export default {
     components: {

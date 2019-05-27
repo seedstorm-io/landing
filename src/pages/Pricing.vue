@@ -96,7 +96,7 @@
 </template>
 
 <script>
-import Section from '../components/Section.vue'
+import Section from '../components/Section'
 import { endpoint } from '../environment.js'
 
 export default {

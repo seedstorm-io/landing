@@ -30,11 +30,11 @@
 
 <script>
 import { endpoint, isLogged } from '../environment.js'
-import Section from '../components/Section.vue'
-import Hero from '../components/Hero.vue'
-import FAQ from '../components/FAQ.vue'
-import CallToAction from '../components/CallToAction.vue'
-import Button from '../components/sub/Button.vue'
+import Section from '../components/Section'
+import Hero from '../components/Hero'
+import FAQ from '../components/FAQ'
+import CallToAction from '../components/CallToAction'
+import Button from '../components/sub/Button'
 
 export default {
     components: {

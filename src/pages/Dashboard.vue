@@ -63,8 +63,8 @@
 <script>
 import { endpoint, isLogged } from '../environment.js'
 import axios from 'axios'
-// import CallToAction from '../components/CallToAction.vue'
-import Section from '../components/Section.vue'
+// import CallToAction from '../components/CallToAction'
+import Section from '../components/Section'
 
 export default {
     name: 'Dashboard',

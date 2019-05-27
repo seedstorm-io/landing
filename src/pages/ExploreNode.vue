@@ -53,9 +53,9 @@
 import { endpoint } from '../environment.js'
 import axios from 'axios'
 
-import Section from '../components/Section.vue'
-import Button from '../components/sub/Button.vue'
-import Loader from '../components/Loader.vue'
+import Section from '../components/Section'
+import Button from '../components/sub/Button'
+import Loader from '../components/Loader'
 
 import VueMarkdown from 'vue-markdown'
 

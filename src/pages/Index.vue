@@ -39,13 +39,13 @@
 <script>
 import { endpoint, isLogged } from '../environment.js'
 
-import CallToAction from '../components/CallToAction.vue'
-import FAQ from '../components/FAQ.vue'
-import Hero from '../components/Hero.vue'
-import Section from '../components/Section.vue'
-import Announcement from '../components/Announcement.vue'
-import Button from '../components/sub/Button.vue'
-import CookieConsent from '../components/sub/CookieConsent.vue'
+import CallToAction from '../components/CallToAction'
+import FAQ from '../components/FAQ'
+import Hero from '../components/Hero'
+import Section from '../components/Section'
+import Announcement from '../components/Announcement'
+import Button from '../components/sub/Button'
+import CookieConsent from '../components/sub/CookieConsent'
 
 export default {
     name: 'Index',
