@@ -1,7 +1,7 @@
 <template>
     <Section class="bg-light pane" mode="xs">
         <div id="loader" class="loader" style="height: 60vh;" v-if="!this.loaded">
-            <half-circle-spinner :animation-duration="1000" :size="50" color="#555555" />
+            <half-circle-spinner :animation-duration="1000" :size="40" color="#555555" />
         </div>
         <div class="row" v-if="this.loaded">
             <div class="col-lg-12 text-center">
@@ -148,6 +148,7 @@ export default {
                 this.loaded = true
                 this.nodes = response.data
             })
+            .catch(error => this.$snackbar.show({ text: "An error occurred, unable to load the page.", pos: 'bottom-center', actionTextColor: '#f66496', duration: 0 }))
     }
 }
 </script>

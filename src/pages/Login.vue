@@ -58,7 +58,6 @@ export default {
             })
             .catch(error => {
                 this.$snackbar.show({text: "Unable to sign into your account.", pos: 'bottom-left'})
-                console.log(error)
                 localStorage.removeItem("Token")
             })
             setTimeout(() => {

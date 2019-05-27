@@ -3,7 +3,7 @@
         <div class="jumbotron bg-white mx-5 mb-5 shadow rounded">
             <div class="container">
                 <div id="loader" class="loader" style="height: 250px;" v-if="!this.loaded">
-                    <half-circle-spinner :animation-duration="1000" :size="50" color="#555555" />
+                    <half-circle-spinner :animation-duration="1000" :size="40" color="#555555" />
                 </div>
                 <transition name="fade">
                     <hooper :autoPlay="true" :playSpeed="5000" v-if="this.loaded">
@@ -18,8 +18,7 @@
                                     <h6 class="accent font-weight-normal">Announcement</h6>
                                     <h3>{{ announcement.title }}</h3>
                                     <p class="mt-3">{{ announcement.description }}</p>
-                                    <Button to="/deploy/stratis"
-                                        class="btn btn-outline-primary">{{ announcement.actionButton }}</Button>
+                                    <Button to="/deploy/stratis" class="btn btn-outline-primary">{{ announcement.actionButton }}</Button>
                                 </div>
                             </div>
                         </slide>

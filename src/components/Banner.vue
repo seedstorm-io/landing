@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import { endpoint } from '../environment.js'
+import { endpoint, isLogged } from '../environment.js'
 import { cultures } from '../internationalization'
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
@@ -102,27 +102,23 @@ export default {
             })
         },
         submitFeedback(e) {
-            var $this = this;
             axios
             .post(endpoint + "/feedbacks", { "content": this.feedback })
-            .then(function() {
-                $this.feedback = ""
-                $this.afterPostedFeedback = true
-                $this.$snackbar.show({text: "Thank you for your feedback ! 🚀", pos: 'bottom-center'});
+            .then(response => {
+                this.feedback = ""
+                this.afterPostedFeedback = true
+                this.$snackbar.show({text: "Thank you for your feedback ! 🚀", pos: 'bottom-center'});
             })
             e.preventDefault();
         }
     },
     mounted() {
+        this.logged = isLogged();
         axios
             .get(endpoint + "/announces/news")
             .then(response => {
                 this.latestNews = response.data
             })
-
-        if (localStorage.getItem("Token")) {
-            this.logged = true;
-        }
     }
 }
 </script>

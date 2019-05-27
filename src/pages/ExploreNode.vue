@@ -1,6 +1,9 @@
 <template>
     <Section class="bg-light pane" mode="xs">
-        <div class="row">
+        <div id="loader" class="loader" style="height: calc(100vh - 142px - 3rem); margin-top: -3rem;" v-if="!this.loaded">
+            <half-circle-spinner :animation-duration="1000" :size="40" color="#555555" />
+        </div>
+        <div class="row" v-if="this.loaded">
             <div class="col-lg-12">
                 <div class="row">
                     <div class="col-lg-12">
@@ -50,6 +53,7 @@
 
 <script>
 import { endpoint } from '../environment.js'
+import { HalfCircleSpinner } from 'epic-spinners'
 import axios from 'axios'
 
 import Section from '../components/Section.vue'
@@ -62,7 +66,8 @@ export default {
     components: {
         Section,
         Button,
-        VueMarkdown
+        VueMarkdown,
+        HalfCircleSpinner,
     },
     data() {
         return {
@@ -78,7 +83,7 @@ export default {
                 this.loaded = true
                 this.node = response.data
             })
-            .catch(function() {router.push("/error")})
+            .catch(error => this.$snackbar.show({ text: "An error occurred, unable to load the page.", pos: 'bottom-center', actionTextColor: '#f66496', duration: 0 }))
     }
 }
 </script>
