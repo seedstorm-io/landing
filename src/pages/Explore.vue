@@ -1,8 +1,6 @@
 <template>
     <Section class="bg-light pane" mode="xs">
-        <div id="loader" class="loader" style="height: 60vh;" v-if="!this.loaded">
-            <half-circle-spinner :animation-duration="1000" :size="40" color="#555555" />
-        </div>
+        <Loader v-if="!this.loaded" />
         <div class="row" v-if="this.loaded">
             <div class="col-lg-12 text-center">
                 <h2>Explore our Blockchain Nodes</h2>
@@ -109,15 +107,15 @@
 
 <script>
 import { endpoint } from '../environment.js'
-import { HalfCircleSpinner } from 'epic-spinners'
 import axios from 'axios'
 import Section from '../components/Section.vue'
+import Loader from '../components/Loader.vue'
 
 export default {
     name: 'Explore',
     components: {
         Section,
-        HalfCircleSpinner
+        Loader
     },
     methods: {
         allNodes() {

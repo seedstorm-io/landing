@@ -4,7 +4,9 @@ body{
 
 .loader
 {
-    position: relative
+    position: relative;
+    height: calc(100vh - 142px - 3rem);
+    margin-top: -3rem;
 }
 
 .loader > div, .absolute-center

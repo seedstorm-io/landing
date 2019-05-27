@@ -1,8 +1,6 @@
 <template>
     <Section class="bg-light pane" mode="xs">
-        <div id="loader" class="loader" style="height: calc(100vh - 142px - 3rem); margin-top: -3rem;" v-if="!this.loaded">
-            <half-circle-spinner :animation-duration="1000" :size="40" color="#555555" />
-        </div>
+        <Loader v-if="!this.loaded" />
         <div class="row" v-if="this.loaded">
             <div class="col-lg-12">
                 <div class="row">
@@ -53,11 +51,11 @@
 
 <script>
 import { endpoint } from '../environment.js'
-import { HalfCircleSpinner } from 'epic-spinners'
 import axios from 'axios'
 
 import Section from '../components/Section.vue'
 import Button from '../components/sub/Button.vue'
+import Loader from '../components/Loader.vue'
 
 import VueMarkdown from 'vue-markdown'
 
@@ -67,7 +65,7 @@ export default {
         Section,
         Button,
         VueMarkdown,
-        HalfCircleSpinner,
+        Loader
     },
     data() {
         return {
