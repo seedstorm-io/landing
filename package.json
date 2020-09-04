@@ -19,7 +19,7 @@
     "flag-icon-css": "^3.3.0",
     "hooper": "^0.1.2",
     "jquery": "^3.4.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "node-snackbar": "^0.1.15",
     "popper.js": "^1.15.0",
     "sass-loader": "^7.1.0",
