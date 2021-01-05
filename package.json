@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-runtime": "^6.26.0",
     "bootstrap": "^4.3.1",
     "core-js": "^2.6.5",
